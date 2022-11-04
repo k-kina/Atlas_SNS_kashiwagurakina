@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PostsTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,5 +12,11 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('users')->insert([
+            'username' => 'ホヤぼーや',
+            'mail' => 'hoya@gmail.com',
+            'password' => bcrypt('hoya123'),
+            'bio' => 'ホヤぼーやは気仙沼のゆるキャラです。'
+        ]);
     }
 }
