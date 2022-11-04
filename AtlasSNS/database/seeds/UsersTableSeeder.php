@@ -11,12 +11,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //ユーザー初期設定
         DB::table('users')->insert([
             'username' => 'ホヤぼーや',
             'mail' => 'hoya@gmail.com',
             'password' => bcrypt('hoya123'),
-            'bio' => 'ホヤぼーやは気仙沼のゆるキャラです。'
+            'bio' => 'ホヤぼーやは気仙沼のゆるキャラです。',
         ]);
     }
 }
