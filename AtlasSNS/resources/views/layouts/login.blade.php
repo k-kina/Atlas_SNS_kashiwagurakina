@@ -27,11 +27,18 @@
                 <div id="">
                     <p>〇〇さん<img src="images/arrow.png"></p>
                 <div>
+            <!--アコーディオンメニュー-->
+                <button type="button" class="menu-btn">
+                    <span class="inn"></span>
+                </button>
+
+                <nav class="menu">
                 <ul>
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
                     <li><a href="/logout">ログアウト</a></li>
                 </ul>
+                </nav>
             </div>
         </div>
     </header>
@@ -53,12 +60,12 @@
                 </div>
                 <p class="btn"><a href="">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <p class="pull-right"><a class="btn btn-success" href="/search">ユーザー検索</a></p>
         </div>
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="{{ asset('/public/js/app.js') }}"></script>
+    <script src="{{ asset('/public/js/script.js') }}"></script>
 </body>
 </html>
