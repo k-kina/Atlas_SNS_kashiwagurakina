@@ -25,7 +25,7 @@
         <h1><a href="/top"><img src="images/atlas.png"height="40" alt="Atlas"></a></h1>
             <div id="">
                 <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
+                    <p>〇〇さん<img src="images/icon1.png"height="30"></p>
                 <div>
             <!--アコーディオンメニュー-->
                 <button type="button" class="menu-btn">
@@ -65,7 +65,7 @@
     </div>
     <footer>
     </footer>
-    <script src="{{ asset('/public/js/app.js') }}"></script>
-    <script src="{{ asset('/public/js/script.js') }}"></script>
+    <script src="{{ asset('/js/app.js') }}"></script>
+    <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 </html>
