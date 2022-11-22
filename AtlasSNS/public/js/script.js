@@ -1,4 +1,8 @@
-$('.menu-btn').click(function () {
-  $(this).toggleClass('is-open');
-  $(this).siblings('.menu').toggleClass('is-open');
+jQuery(function ($) {
+  $('.js-accordion-title').on('click', function () {
+    //クリックでコンテンツを開閉
+    $(this).next().slideToggle(200);
+    //矢印の向きを変更
+    $(this).toggleClass('open', 200);
+  });
 });
