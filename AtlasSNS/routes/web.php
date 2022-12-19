@@ -34,9 +34,16 @@ Route::group(['middleware' => 'auth'], function(){
 Route::get('/top','PostsController@index')->name('/login');
 });
 
+Route::post('/post/create','PostsController@create');//投稿機能ルーティング
+
+Route::post('/post/update','PostsController@update');//投稿内容編集
+
+Route::get('/post/{id}/delete','PostsController@delete');//削除機能
+
 Route::get('/profile','UsersController@profile');
 
-Route::get('/search','UsersController@index');
+Route::get('/search','UsersController@search');//ユーザー検索画面
+Route::get('/search','UsersController@usersearch');//検索機能
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
