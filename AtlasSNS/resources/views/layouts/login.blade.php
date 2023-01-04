@@ -18,29 +18,26 @@
     <!--iphoneのアプリアイコン指定-->
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <div id = "head">
-        <h1><a href="/top"><img src="images/atlas.png"height="40" alt="Atlas"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="images/icon1.png"height="30"></p>
-                <div>
-            <!--アコーディオンメニュー-->
-                <button type="button" class="menu-btn">
-                    <span class="inn"></span>
-                </button>
+        <h1><a href="/top"><img src="images/atlas.png"height="50" alt="Atlas"></a></h1>
 
-                <nav class="menu">
+        <div class="side_user">
+        <p>〇〇さん
+            <div id="accordion" class="accordion-container">
+  <h4 class="accordion-title js-accordion-title"></h4>
+  <!-- <div class="accordion-content"> -->
                 <ul>
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
                     <li><a href="/logout">ログアウト</a></li>
                 </ul>
-                </nav>
-            </div>
-        </div>
+                <!-- </div> -->
+                </div>
+                <img src="images/icon1.png"height="30"></p>
+</div>
     </header>
     <div id="row">
         <div id="container">
@@ -51,14 +48,14 @@
                 <p>〇〇さんの</p>
                 <div>
                 <p>フォロー数</p>
-                <p>〇〇名</p>
+                <p>{{ Auth::user()->follows()->count() }}名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <p>{{ Auth::user()->followers()->count() }}名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
             </div>
             <p class="pull-right"><a class="btn btn-success" href="/search">ユーザー検索</a></p>
         </div>
@@ -66,6 +63,7 @@
     <footer>
     </footer>
     <script src="{{ asset('/js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 </html>
