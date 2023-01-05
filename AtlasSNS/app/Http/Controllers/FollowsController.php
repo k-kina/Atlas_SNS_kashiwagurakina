@@ -10,7 +10,7 @@ class FollowsController extends Controller
     //フォローしてくれているユーザーの投稿を表示
     public function followerList()
     {
-        $following_id = Auth::user()->follows()->pluck('following_id');
+        $following_id = Auth::user()->followers()->pluck('following_id');
         //dd($following_id); // フォローしてくれているユーザーのidを取得し$following_idに格納する
 
         $posts = Post::with('user')->whereIn('user_id', $following_id)->get();// $following_idに格納したユーザーidと一致するカラム名：user_id(投稿内容)を取得
