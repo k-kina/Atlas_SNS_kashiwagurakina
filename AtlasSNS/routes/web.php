@@ -42,10 +42,18 @@ Route::get('/post/{id}/delete','PostsController@delete');//削除機能
 
 Route::get('/profile','UsersController@profile');
 
-Route::get('/search','UsersController@search');//ユーザー検索画面
+Route::get('/search','UsersController@search');//ユーザー検索一覧表示
 Route::get('/search','UsersController@usersearch');//検索機能
 
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
+Route::post('/follow','UsersController@follow');//フォロー機能
+Route::post('/unFollow','UsersController@unFollow');//フォロー解除機能
+
+
+Route::get('/follow-list','FollowsController@followList');
+Route::get('/follower-list','FollowsController@followerList');
+
+Route::get('/otherProfile','UsersController@profile');//フォローしている人のプロフィールページ
+Route::get('/otherProfile2','UsersController@profile');
+//フォローされている人のプロフィールページ
 
 Route::get('/logout','Auth\LoginController@logout');
